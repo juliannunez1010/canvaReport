@@ -2,8 +2,8 @@ import { test } from '../fixtures/test'
 import { exportToExcel } from '../utils/excelUtils';
 
 test.beforeEach(async ({login}) => {
-    const user = process.env.USER!;
-    const password = process.env.PASS!;
+    const user = process.env.CANVAUSERNAME!;
+    const password = process.env.PASSW!;
 
     await login.loginUser(user, password);
     await login.goToTemplateAnalytics();
@@ -14,7 +14,7 @@ test("Create canva usage report Pro", async({template}) => {
     await template.goToPro();
     await template.scrollToBottom();
     const reportData = await template.getDataFromTable();
-    await exportToExcel(reportData);
+    await exportToExcel(reportData, reportName);
 })
 
 test("Create canva usage report Free", async({template}) => {
@@ -22,5 +22,5 @@ test("Create canva usage report Free", async({template}) => {
     await template.goToFree();
     await template.scrollToBottom();
     const reportData = await template.getDataFromTable();
-    await exportToExcel(reportData, "reportName");
+    await exportToExcel(reportData, reportName);
 })
