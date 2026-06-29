@@ -39,10 +39,10 @@ export default defineConfig({
         headless: false,
         viewport: { width: 1080, height: 1080 },
         //userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36...',
-        locale: 'es-MX',
-        timezoneId: 'America/Mexico_City',
+        locale: 'es-CO',
+        timezoneId: 'America/Bogota',
         permissions: ['geolocation', 'notifications'],
-        geolocation: { latitude: 19.4326, longitude: -99.1332 },
+        geolocation: { latitude: 6.2442, longitude: -75.5812 },
         launchOptions: {
           args: [
             '--disable-blink-features=AutomationControlled',
