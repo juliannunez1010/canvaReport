@@ -17,7 +17,7 @@ export class LoginPage {
         this.page = page;
         this.loginLink = page.getByRole("link", {name: "Iniciar sesión"});
         this.continueWithEmailButton = page.getByRole("button", {name: "Usar mi correo"});
-        this.emailInput = page.getByRole("textbox", {name: "Correo electrónico (personal o laboral)"});
+        this.emailInput = page.getByRole('textbox', { name: 'Correo (personal o del' });
         this.continueButton = page.getByRole("button", {name: "Continuar"});
         this.passInput = page.getByRole("textbox", {name: "Contraseña"});
         this.loginButton = page.getByRole("button", {name: "Iniciar sesión"});
