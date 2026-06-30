@@ -36,8 +36,10 @@ export default defineConfig({
     {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'],
+        userAgent: undefined,
+        channel: 'chrome',
         headless: false,
-        viewport: { width: 1080, height: 1080 },
+        viewport: { width: 1920, height: 1080 },
         //userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36...',
         locale: 'es-CO',
         timezoneId: 'America/Bogota',
