@@ -20,7 +20,7 @@ export class TemplatesPage {
         this.myPerformanceHeader = page.getByRole("heading", { name: "Mi desempeño" });
         this.bodyPage = page.locator(".L74Q6g");
         this.contentTypeComboBox = page.getByRole('combobox', { name: 'Gratis y Pro' });
-        this.freeButton = page.getByRole("option", { name: "Free", exact: true });
+        this.freeButton = page.getByRole("option", { name: "Gratis", exact: true });
         this.proButton = page.getByRole("option", { name: "Pro", exact: true });
         this.templateUsageTable = page.locator("._57YXoA");
         this.dataRangeComboBox = page.getByRole('combobox', { name: 'Filtrar por fecha' });

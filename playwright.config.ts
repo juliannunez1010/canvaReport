@@ -33,7 +33,7 @@ export default defineConfig({
 
   /* Configure projects for major browsers */
   projects: [
-    {
+   /*  {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'],
         userAgent: undefined,
@@ -51,10 +51,35 @@ export default defineConfig({
             '--disable-features=IsolateOrigins,site-per-process',
             '--disable-web-security',
       // ... más argumentos de evasión
-    ]
-  }
-       },
+          ]
+        }
+      },
+    }, */
+
+    {
+    name: 'chromium',
+    use: { 
+      ...devices['Desktop Chrome'],
+      // 1. Dejamos que use el UA nativo del OS para que coincida con la GPU/Fuentes reales
+      userAgent: undefined, 
+      
+      // 2. Forzamos el uso del navegador comercial estable, no Chromium puro
+      channel: 'chrome', 
+      
+      headless: false,
+      viewport: { width: 1080, height: 1080 },
+      locale: 'es-CO',
+      timezoneId: 'America/Bogota',
+      permissions: ['geolocation', 'notifications'],
+      geolocation: { latitude: 6.2442, longitude: -75.5812 },
+      launchOptions: {
+        args: [
+          '--disable-blink-features=AutomationControlled', // Vital para ocultar el flag navigator.webdriver
+          // Procura remover '--disable-web-security' si el bloqueo persiste.
+        ]
+      }
     },
+  },
 
     /* {
       name: 'firefox',
